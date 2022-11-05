@@ -91,7 +91,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/goLogin"
         android:layout_below="@+id/registerBtn"
-        android:text="REGISTER"
+        android:text="LOGIN"
         android:backgroundTint="#f7c76d"
         android:layout_centerHorizontal="true"/>
 

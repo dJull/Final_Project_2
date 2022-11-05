@@ -62,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful() && task.getResult().getUser()!=null) {
+                if(task.isSuccessful() && task.getResult()!=null) {
                     FirebaseUser user = task.getResult().getUser();
                     if (user != null) {
                         UserProfileChangeRequest request = new UserProfileChangeRequest.Builder()

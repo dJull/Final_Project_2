@@ -41,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
         progressDialog.setCancelable(false);
 
         btnRegister.setOnClickListener(v->{
-            if(editName.getText().length()>0&&editEmail.getText().length()>0&&editPassword.getText().length()>0&&editPasswordConfirmation.getText().length()>0){
+            if(editName.getText().length()>0 && editEmail.getText().length()>0&&editPassword.getText().length()>0&&editPasswordConfirmation.getText().length()>0){
                 if(editPassword.getText().toString().equals(editPasswordConfirmation.getText().toString())){
                     register(editName.getText().toString(), editEmail.getText().toString(), editPassword.getText().toString());
                 }else{

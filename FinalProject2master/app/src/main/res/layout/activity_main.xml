@@ -22,6 +22,15 @@
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
         android:text="..."/>
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logoutBtn"
+        android:layout_below="@+id/txt1"
+        android:text="LOGOUT"
+        android:backgroundTint="#f7c76d"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"/>
 
 
 

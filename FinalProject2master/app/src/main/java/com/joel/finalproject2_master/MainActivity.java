@@ -13,11 +13,29 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-    CardView staffAdd,stockAdd;
+    private FirebaseUser firebaseUser;
+    private CardView staffAdd,stockAdd;
+    private Button btnLogout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        staffAdd=findViewById(R.id.addStaff);
+        stockAdd=findViewById(R.id.addStock);
+        btnLogout=findViewById(R.id.logoutBtn);
+        firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
+
+        btnLogout.setOnClickListener(v->{
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(getApplicationContext(),LoginAdminActivity.class));
+            finish();
+        });
+        staffAdd.setOnClickListener(v->{
+            startActivity(new Intent(getApplicationContext(),RegisterStaffActivity.class));
+        });
+        stockAdd.setOnClickListener(v->{
+            startActivity(new Intent(getApplicationContext(),AddStockActivity.class));
+        });
     }
 
 }

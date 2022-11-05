@@ -5,13 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logoutBtn"
+        android:text="LOGOUT"
+        android:backgroundTint="#f7c76d"
+        android:layout_centerHorizontal="true"/>
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:columnCount="3"
-        android:rowCount="2">
-
+        android:rowCount="2"
+        android:layout_marginTop="50dp">
         <androidx.cardview.widget.CardView
             android:id="@+id/addStaff"
             android:layout_width="wrap_content"

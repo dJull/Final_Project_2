@@ -14,6 +14,12 @@
         android:theme="@style/Theme.FinalProject2master"
         tools:targetApi="31">
         <activity
+            android:name=".AddStockActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterStaffActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
@@ -27,7 +33,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>

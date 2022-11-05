@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".LoginAdminActivity">
+    tools:context=".RegisterActivity">
 
     <TextView
         android:id="@+id/loginTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login As Admin"
+        android:text="Register As Admin"
         android:textColor="@color/black"
         android:textSize="35dp"
         android:textStyle="bold"
@@ -21,15 +21,29 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/email"
+        android:id="@+id/name"
         android:layout_below="@+id/loginTitle"
-        android:hint="Email"
+        android:hint="Name"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
         android:layout_margin="10dp"
         android:padding="20dp"
         android:background="#fff7e6"
         android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawablePadding="20dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:layout_below="@+id/name"
+        android:hint="Email"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:layout_margin="10dp"
+        android:padding="20dp"
+        android:background="#fff7e6"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
         android:drawablePadding="20dp"/>
 
     <EditText
@@ -47,12 +61,27 @@
         android:drawablePadding="20dp"
         android:inputType="textPassword" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/passwordConf"
+        android:layout_below="@+id/password"
+        android:hint="Password"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:layout_margin="10dp"
+        android:padding="20dp"
+        android:background="#fff7e6"
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="20dp"
+        android:inputType="textPassword" />
+
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/loginBtn"
-        android:layout_below="@+id/password"
-        android:text="LOGIN"
+        android:id="@+id/registerBtn"
+        android:layout_below="@+id/passwordConf"
+        android:text="REGISTER"
         android:backgroundTint="#f7c76d"
         android:layout_centerHorizontal="true"
         android:layout_margin="20dp"/>
@@ -60,11 +89,10 @@
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/goRegister"
-        android:layout_below="@+id/loginBtn"
-        android:text="REGISTER FIRST"
+        android:id="@+id/goLogin"
+        android:layout_below="@+id/registerBtn"
+        android:text="REGISTER"
         android:backgroundTint="#f7c76d"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"/>
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

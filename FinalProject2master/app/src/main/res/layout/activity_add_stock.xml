@@ -19,24 +19,38 @@
         android:gravity="center"/>
 
     <EditText
+        android:id="@+id/itemId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/itemId"
-        android:hint="Insert Item Id"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
         android:layout_marginTop="240dp"
-        android:padding="20dp"
         android:background="#fff7e6"
         android:drawableLeft="@drawable/ic_baseline_numbers_24"
         android:drawablePadding="20dp"
-        android:inputType="number"/>
+        android:hint="Insert Item Id"
+        android:inputType="number"
+        android:padding="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+
+    <EditText
+        android:id="@+id/itemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff7e6"
+        android:layout_below="@id/itemId"
+        android:drawableLeft="@drawable/ic_baseline_numbers_24"
+        android:drawablePadding="20dp"
+        android:hint="Insert Name"
+        android:padding="20dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/quantityStock"
-        android:layout_below="@+id/itemId"
+        android:layout_below="@+id/itemName"
         android:hint="Insert Quantity"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
@@ -51,11 +65,11 @@
 
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/quantityStock"
-        android:id="@+id/btnUpdate"
-        android:text="Update"
+        android:layout_centerHorizontal="true"
         android:backgroundTint="#f7c76d"
-        android:layout_centerHorizontal="true"/>
+        android:text="Update" />
 </RelativeLayout>

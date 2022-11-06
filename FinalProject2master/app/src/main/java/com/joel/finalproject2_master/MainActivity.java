@@ -11,9 +11,11 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseUser firebaseUser;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CardView staffAdd,stockAdd;
     private Button btnLogout;
     @Override
@@ -34,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),RegisterStaffActivity.class));
         });
         stockAdd.setOnClickListener(v->{
-            startActivity(new Intent(getApplicationContext(),AddStockActivity.class));
+            startActivity(new Intent(getApplicationContext(),DataStockActivity.class));
         });
     }
-
 }

@@ -52,7 +52,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/loginBtn"
         android:layout_below="@+id/password"
-        android:text="LOGIN"
+        android:text="LOGIN AS ADMIN"
+        android:backgroundTint="#f7c76d"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/goToLoginStaff"
+        android:layout_below="@+id/loginBtn"
+        android:text="LOGIN AS STAFF"
         android:backgroundTint="#f7c76d"
         android:layout_centerHorizontal="true"
         android:layout_margin="5dp"/>
@@ -61,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/goRegister"
-        android:layout_below="@+id/loginBtn"
+        android:layout_below="@+id/goToLoginStaff"
         android:text="REGISTER FIRST"
         android:backgroundTint="#f7c76d"
         android:layout_centerHorizontal="true"

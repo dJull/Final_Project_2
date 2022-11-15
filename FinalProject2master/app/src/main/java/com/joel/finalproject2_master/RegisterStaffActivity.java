@@ -19,19 +19,27 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.sql.DatabaseMetaData;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 
 public class RegisterStaffActivity extends AppCompatActivity {
-    private EditText editName,editEmail,editPassword,editPassConf;
+    private EditText editName,editEmail,editPassword,editPassConf, editNumber;
     private Button registerStaffBtn;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private ProgressDialog progressDialog;
+    private DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://final-project2-55ca4-default-rtdb.asia-southeast1.firebasedatabase.app/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +48,7 @@ public class RegisterStaffActivity extends AppCompatActivity {
         editName = findViewById(R.id.nameStaff);
         editEmail = findViewById(R.id.email);
         editPassword = findViewById(R.id.password);
+        editNumber=findViewById(R.id.phoneNum);
         editPassConf=findViewById(R.id.passwordConf);
         registerStaffBtn=findViewById(R.id.btnRegisterStaff);
         progressDialog=new ProgressDialog(RegisterStaffActivity.this);
@@ -61,6 +70,25 @@ public class RegisterStaffActivity extends AppCompatActivity {
     }
 
     private void registerStaff(String name, String email, String password){
+        Random rand=new Random();
+        int uniqueKey= rand.nextInt(6);
+        final String key = editNumber.getText().toString();
+
+        databaseReference.child("staff").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                databaseReference.child("staff").child(key).child("name").setValue(name);
+                databaseReference.child("staff").child(key).child("email").setValue(email);
+                databaseReference.child("staff").child(key).child("password").setValue(password);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
         Map<String, Object> staff = new HashMap<>();
         staff.put("fullName", name);
         staff.put("email",email);

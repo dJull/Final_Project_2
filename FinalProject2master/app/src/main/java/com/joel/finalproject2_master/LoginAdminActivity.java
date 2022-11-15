@@ -18,10 +18,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginAdminActivity extends AppCompatActivity {
     private EditText editEmail,editPassword;
-    private Button btnLogin,btnGoRegister;
+    private Button btnLogin,btnGoRegister,btnLoginStaff;
     private FirebaseAuth mAuth;
     private ProgressDialog progressDialog;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +29,7 @@ public class LoginAdminActivity extends AppCompatActivity {
         editEmail=findViewById(R.id.email);
         editPassword=findViewById(R.id.password);
         btnLogin=findViewById(R.id.loginBtn);
+        btnLoginStaff=findViewById(R.id.goToLoginStaff);
         btnGoRegister=findViewById(R.id.goRegister);
         mAuth = FirebaseAuth.getInstance();
         progressDialog=new ProgressDialog(LoginAdminActivity.this);
@@ -37,6 +37,9 @@ public class LoginAdminActivity extends AppCompatActivity {
         progressDialog.setMessage("Silahkan tunggu");
         progressDialog.setCancelable(false);
 
+        btnLoginStaff.setOnClickListener(v->{
+            startActivity(new Intent(getApplicationContext(), LoginStaffActivity.class));
+        });
         btnGoRegister.setOnClickListener(v -> {
             startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
         });

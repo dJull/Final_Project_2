@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".LoginAdminActivity">
+    tools:context=".LoginStaffActivity">
 
     <TextView
         android:id="@+id/loginTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login As Admin"
+        android:text="Login As Staff"
         android:textColor="@color/black"
         android:textSize="35dp"
         android:textStyle="bold"
@@ -21,22 +21,24 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/email"
-        android:layout_below="@+id/loginTitle"
-        android:hint="Email"
+        android:id="@+id/phoneNumber"
+        android:layout_below="@id/loginTitle"
+        android:hint="Phone Number"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
         android:layout_margin="10dp"
+        android:inputType="number"
         android:padding="20dp"
         android:background="#fff7e6"
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="20dp"/>
 
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/password"
-        android:layout_below="@+id/email"
+        android:id="@+id/passwordStaff"
+        android:layout_below="@+id/phoneNumber"
         android:hint="Password"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
@@ -47,34 +49,25 @@
         android:drawablePadding="20dp"
         android:inputType="textPassword" />
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/loginBtn"
-        android:layout_below="@+id/password"
-        android:text="LOGIN AS ADMIN"
-        android:backgroundTint="#f7c76d"
+    <Button
+        android:id="@+id/btnloginstaff"
+        android:layout_below="@id/passwordStaff"
         android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"/>
+        android:layout_marginTop="50dp"
+        android:text="Login as Staff"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/goToLoginStaff"
-        android:layout_below="@+id/loginBtn"
-        android:text="LOGIN AS STAFF"
-        android:backgroundTint="#f7c76d"
+    <TextView
+        android:id="@+id/textbottom"
+        android:layout_below="@+id/btnloginstaff"
+        android:layout_marginTop="190dp"
+        android:text="We wish you a happy working day"
         android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"/>
-
-    <com.google.android.material.button.MaterialButton
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/goRegister"
-        android:layout_below="@+id/goToLoginStaff"
-        android:text="REGISTER FIRST"
-        android:backgroundTint="#f7c76d"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"/>
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>

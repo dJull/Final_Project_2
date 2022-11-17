@@ -30,7 +30,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:background="#7781581B"
-        android:drawableLeft="@drawable/ic_baseline_email_24"
+        android:drawableLeft="@drawable/ic_baseline_email_24white"
         android:drawablePadding="20dp"
         android:hint="Email"
         android:padding="20dp"
